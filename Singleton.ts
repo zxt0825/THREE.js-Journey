@@ -9,7 +9,7 @@ export const Singleton = <T extends new (...args: any[]) => any>(type: T) => new
     if (target.prototype !== newTarget.prototype)
       return Reflect.construct(target, argsList, newTarget);
     if (!target[SINGLETON_KEY])
-      target [SINGLETON_KEY] = Reflect.construct(target, argsList, newTarget);
+      target[SINGLETON_KEY] = Reflect.construct(target, argsList, newTarget);
     return target[SINGLETON_KEY];
   }
 });
